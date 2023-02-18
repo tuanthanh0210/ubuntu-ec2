@@ -13,5 +13,7 @@ echo "Install successfully : Makefile"
 sudo apt install htop
 sudo snap install docker
 echo "Install successfully : Docker"
+sudo chown ubuntu:docker /var/run/docker.sock
+echo "Install successfully : Run docker without sudo"
 sudo npm i -g yarn
 echo "Install successfully : Yarn"
