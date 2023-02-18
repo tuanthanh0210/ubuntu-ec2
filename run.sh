@@ -5,8 +5,8 @@ curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && sudo apt in
 echo "Install successfully : Node"
 sudo apt install npm
 echo "Install successfully : npm"
-sudo npm install -g n
 sudo npm install -g pm2
+sudo npm install -g n
 echo "Install successfully : PM2"
 sudo apt install make
 echo "Install successfully : Makefile"
