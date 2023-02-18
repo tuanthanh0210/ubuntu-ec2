@@ -1,7 +1,7 @@
 sudo apt update
 sudo apt install git
 echo "Install successfully : Git"
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && sudo apt install nodejs
+sudo apt install nodejs
 echo "Install successfully : Node"
 sudo apt install npm
 echo "Install successfully : npm"
