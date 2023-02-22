@@ -20,9 +20,3 @@ sudo chown ubuntu:docker /var/run/docker.sock
 echo "Install successfully : Run docker without sudo"
 sudo npm i -g yarn
 echo "Install successfully : Yarn"
-sudo apt install nginx
-sudo ufw app list
-sudo ufw allow 'Nginx HTTP'
-sudo ufw enable
-sudo ufw status
-echo "Install successfully : Nginx"
