@@ -14,7 +14,7 @@ echo "Install successfully : Nodejs 18"
 sudo apt install -y make
 echo "Install successfully : Makefile"
 sudo apt install -y htop
-sudo snap install -y docker
+sudo apt install -y docker.io
 echo "Install successfully : Docker"
 sudo chown ubuntu:ubuntu /var/run/docker.sock
 echo "Install successfully : Run docker without sudo"
