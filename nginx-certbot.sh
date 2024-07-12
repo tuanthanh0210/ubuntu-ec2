@@ -56,7 +56,7 @@ server {
 " > /etc/nginx/conf.d/$SUBDOMAIN.conf
 
 
-certbot --nginx -d $DOMAIN --agree-tos --no-eff-email
+certbot --nginx -d $DOMAIN --agree-tos --email tuanthanh021094@gmail.com
 
 
 # echo "0 12 * * * /usr/bin/certbot renew --quiet" | crontab -
