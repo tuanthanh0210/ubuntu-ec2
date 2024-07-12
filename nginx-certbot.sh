@@ -35,7 +35,7 @@ apt update; apt install -y vim && apt install -y certbot python3-certbot-nginx
 
 IFS='.' read -r -a array <<< "$DOMAIN"
 SUBDOMAIN=${array[0]}
-DOMAIN=${array[1]}.${array[2]}
+ORIGIN_DOMAIN=${array[1]}.${array[2]}
 echo "Subdomain: $SUBDOMAIN"
 
 echo "
