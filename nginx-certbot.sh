@@ -58,7 +58,7 @@ server {
 
 certbot --nginx -d $DOMAIN --agree-tos --no-eff-email
 
-// Chạy lệnh sau để cài đặt crontab tự động gia hạn chứng chỉ SSL
-echo "0 12 * * * /usr/bin/certbot renew --quiet" | crontab -
+
+# echo "0 12 * * * /usr/bin/certbot renew --quiet" | crontab -
 
 service nginx -s reload
