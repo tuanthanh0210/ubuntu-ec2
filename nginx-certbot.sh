@@ -60,7 +60,3 @@ certbot --nginx -d $SUBDOMAIN --agree-tos --no-eff-email
 echo "0 12 * * * /usr/bin/certbot renew --quiet" | crontab -
 
 service nginx -s reload
-
-
-docker run -d -p 80:80 -p 443:443 --name=nginx nginx && \n
-docker exec -it nginx bash -c "curl https://raw.githubusercontent.com/tuanthanh021094/ubuntu-ec2/main/nginx-certbot.sh --output nginx-certbot.sh && bash nginx-certbot.sh domain=xbot-db.justinle.pro service_name=xbot-db port_service=3000"
