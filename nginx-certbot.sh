@@ -33,6 +33,11 @@ fi
 
 apt update; apt install -y vim && apt install -y certbot python3-certbot-nginx
 
+IFS='.' read -r -a array <<< "$DOMAIN"
+SUBDOMAIN=${array[0]}
+DOMAIN=${array[1]}.${array[2]}
+echo "Subdomain: $SUBDOMAIN"
+
 echo "
 upstream $SERVICE_NAME {
     server $SERVICE_NAME:$PORT_SERVICE;
@@ -48,13 +53,10 @@ server {
         proxy_pass http://$SERVICE_NAME;
     }
 }
-" > /etc/nginx/conf.d/$DOMAIN.conf
+" > /etc/nginx/conf.d/$SUBDOMAIN.conf
 
-IFS='.' read -r -a array <<< "$DOMAIN"
-SUBDOMAIN=${array[0]}
-DOMAIN=${array[1]}.${array[2]}
-echo "Subdomain: $SUBDOMAIN"
-certbot --nginx -d $SUBDOMAIN --agree-tos --no-eff-email
+
+certbot --nginx -d $DOMAIN --agree-tos --no-eff-email
 
 // Chạy lệnh sau để cài đặt crontab tự động gia hạn chứng chỉ SSL
 echo "0 12 * * * /usr/bin/certbot renew --quiet" | crontab -
