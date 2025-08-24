@@ -5,7 +5,7 @@ echo "=== Updating package list ==="
 sudo apt update -y
 
 echo "=== Installing git, nodejs, npm , rsync ==="
-sudo apt install -y git nodejs npm rsync
+sudo apt install -y git nodejs npm rsync vim
 
 echo "=== Installing global npm packages: pm2, nvm, yarn ==="
 sudo npm install -g pm2 nvm yarn
