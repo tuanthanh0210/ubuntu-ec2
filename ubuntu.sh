@@ -8,7 +8,9 @@ echo "=== Installing git, nodejs, npm , rsync ==="
 sudo apt install -y git nodejs npm rsync vim
 
 echo "=== Installing global npm packages: pm2, nvm, yarn ==="
-sudo npm install -g pm2 nvm yarn
+sudo npm install -g pm2 yarn
+
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
 echo "=== Checking Node.js version ==="
 node -v
@@ -67,3 +69,10 @@ echo "===> Bước 13: Test"
 docker psdocke
 
 echo "=== Installation completed successfully! ==="
+
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+echo 'zsh' >> ~/.bashrc
+
+echo 'ZSH_THEME_GIT_PROMPT_PREFIX="%B%{$fg[yellow]%}(" ZSH_THEME_GIT_PROMPT_SUFFIX=")%b%{$reset_color%} " ZSH_THEME_GIT_PROMPT_DIRTY="" ZSH_THEME_GIT_PROMPT_CLEAN=""' >> ~/.zshrc
+
+source ~/.zshrc
